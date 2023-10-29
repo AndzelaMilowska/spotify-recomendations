@@ -1,0 +1,29 @@
+removebtn-component {
+    @include square-16px;
+    @include margin-01;
+}
+
+.removeElement-button {
+    @include border-circle;
+    @include background-transparent;
+    @include remove-appearance;
+    @include cursor-pointer;
+    @include square-16px;
+    @include border-remove;
+    @include color-tertiary;
+    position: absolute;
+    z-index: 2;
+
+    &:hover {
+        @include color-primary;
+        @include duration-01;
+    }
+
+    &__icon {
+        @include center-absolute;
+        @include square-16px;
+        @include padding-00;
+        color:inherit;
+        z-index: 0;
+    }
+}

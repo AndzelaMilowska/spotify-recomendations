@@ -1,0 +1,59 @@
+@import './variables-static.scss';
+@import './mixins.scss';
+
+checkbox-component {
+    @include square-16px;
+    @include margin-01;
+}
+
+.addElement-checkbox__label {
+    @include color-tertiary;
+    @include square-16px;
+    @include border-circle;
+    position: relative;
+    &:hover {
+        @include color-primary;
+    }
+}
+
+.addElement-checkbox {
+    @include center-absolute;
+    @include border-circle;
+    @include margin-00;
+    @include padding-00;
+    @include cursor-pointer;
+    @include square-15px;
+    appearance: none;
+    z-index: 2;
+
+    &__icon {
+        @include center-absolute;
+        @include square-16px;
+        @include padding-00;
+        color:inherit;
+        z-index: 0;
+    }
+
+    &__removeIcon {
+        @include duration-01;
+        transform: rotate(90deg);
+    }
+}
+
+.addElement-checkbox:checked + .addElement-checkbox__addIcon{
+    @include duration-01;
+    @include color-transparent;
+    transform: rotate(90deg);
+}
+
+.addElement-checkbox:not(:checked) + .addElement-checkbox__addIcon {
+    @include duration-01;
+    color: inherit;
+    transform: rotate(0deg);
+}
+
+.addElement-checkbox:checked ~ .addElement-checkbox__removeIcon{
+    @include duration-01;
+    transform: rotate(180deg);
+}
+

@@ -1,0 +1,44 @@
+@import './variables-static.scss';
+@import './mixins.scss';
+
+.searchbar {
+    @include font-size_secondary;
+    @include border-transparent;
+    @include secondary-background;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: $unit-02;
+    width: 80%;
+    height: $unit-03;
+    margin: auto;
+    transition: color 0.25s;
+
+    &__input {
+        @include color-primary;
+        @include background-transparent;
+        @include border-remove;
+        font-family: inherit;
+        text-overflow: ellipsis;
+        &:focus {
+            outline: none;
+         }
+    }
+
+    &:hover {
+        @include border-transparent;
+        border-color: $secondary-grey;
+    }
+
+    &:has(&__input:focus) {
+        @include border-transparent;
+        border-color: $spotify-white;
+         
+         & > .searchbar__icon {
+            @include color-primary;
+           }
+        }
+
+
+  }
+
+

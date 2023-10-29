@@ -1,0 +1,13 @@
+@import './variables-static.scss';
+@import './mixins.scss';
+
+.recomendations-sourcesList {
+  @include color-primary;
+  @include container-base;
+  display: block;
+  width: 95%;
+  box-sizing: border-box;
+  min-width: 200px;
+  overflow: hidden;
+  height: fit-content;
+}

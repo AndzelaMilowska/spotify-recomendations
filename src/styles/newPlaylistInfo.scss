@@ -1,0 +1,27 @@
+@import './variables-static.scss';
+@import './mixins.scss';
+
+.newPlaylist-info {
+    @include center-flex;
+    @include secondary-background;
+    @include border-01;
+    @include border-transparent;
+    position: absolute;
+    border-color: $secondary-grey;
+    z-index: 4;
+    width: 250px;
+    height: 300px;
+    justify-self: center;
+    top: $unit-10;
+    flex-direction: column;
+    display: none;
+    
+    &__Icon {
+        @include color-tertiary;
+        margin: 1rem ;
+    }
+
+    & .recomendations-list__button {
+        position:static;
+    }
+}

@@ -1,0 +1,33 @@
+
+    $spotify-black: rgb(25, 20, 20);
+    $spotify-white: rgb(255, 255, 255); 
+    $spotify-green: rgb(30, 215, 96);
+    $black: rgb(0, 0, 0);
+    $primary-dark: rgb(18, 18, 18);
+    $primary-grey: rgb(179, 179, 179);
+    $secondary-grey: rgb(56, 56, 56);
+    $transparent: rgba(255, 255, 255, 0);
+    $transparent005: rgba(255, 255, 255, 0.050);
+    $transparent0075:rgba(255, 255, 255, 0.075);
+    $transparent01:rgba(255, 255, 255, 0.1);
+
+    $primary-background: $black;
+    $secondary-background: $primary-dark;
+    $tertiary-background: $secondary-grey;
+
+    $unit-0025: 0.25rem;
+    $unit-005: 0.5rem;
+    $unit-0075: 0.75rem;
+    $unit-01: 1rem;
+    $unit-0125: 1.25rem;
+    $unit-02: 2rem;
+    $unit-025: 2.5rem;
+    $unit-03: 3rem;
+    $unit-06: 6rem;
+    $unit-10: 10rem;
+
+    $unit-02p: 2px;
+    $unit-05p: 5px;
+
+    $secondary-font-size: $unit-0075;
+    $primary-font-size: $unit-01;

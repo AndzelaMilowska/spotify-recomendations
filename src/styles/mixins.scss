@@ -1,0 +1,185 @@
+@import './variables-static.scss';
+
+@mixin square-16px {
+  width: 16px;
+  height: 16px;
+}
+
+@mixin square-15px {
+  width: 15px;
+  height: 15px;
+}
+
+@mixin box-shadow01 {
+  box-shadow: $unit-0025 $unit-0025 $unit-05p $unit-02p $black;
+}
+
+@mixin top-02 {
+  top: $unit-02
+}
+
+@mixin border-remove {
+  border: none;
+}
+
+@mixin border-circle {
+  border-radius: 50%;
+}
+
+@mixin border-01 {
+  border-radius: $unit-01;
+}
+
+@mixin border-rounded {
+  border-radius: 8px;
+}
+
+@mixin border-transparent {
+  border: $unit-02p solid $transparent;
+}
+
+@mixin color-primary {
+  color: $spotify-white; 
+}
+
+@mixin color-secondary {
+  color: $spotify-black; 
+}
+
+@mixin color-tertiary {
+  color: $primary-grey;
+}
+
+@mixin primary-background {
+  background-color: $primary-background;
+}
+
+@mixin secondary-background {
+  background-color: $secondary-background;
+}
+
+@mixin tertiary-background {
+  background-color:  $tertiary-background;
+}
+
+@mixin background-transparent005 {
+  background-color:  $transparent005;
+}
+
+@mixin background-green {
+  background-color:  $spotify-green;
+}
+
+@mixin background-transparent0075 {
+  background-color:  $transparent0075;
+}
+
+@mixin background-transparent {
+  background-color:  $transparent;
+}
+
+@mixin background-transparent001 {
+  background-color:   $transparent01;
+}
+
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin center-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin fill-absolute {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin padding-00 {
+  padding: 0;
+}
+
+@mixin padding-005 {
+  padding: $unit-005;
+}
+
+@mixin padding-01 {
+  padding: $unit-01;
+}
+
+@mixin margin-00 {
+  margin: 0;
+}
+
+@mixin margin-005 {
+  margin: $unit-005;
+}
+
+@mixin margin-01 {
+  margin: 0 $unit-01 0 $unit-005;
+}
+
+@mixin cursor-pointer {
+  cursor: pointer;
+}
+
+@mixin duration-01 {
+  transition-duration: 1s;
+}
+
+@mixin color-transparent {
+  color: $transparent;
+}
+
+@mixin fontFamily-01 {
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
+}
+
+@mixin font-bold {
+  font-weight: 700;
+}
+
+@mixin font-semibold {
+  font-weight: 500;
+}
+
+@mixin remove-appearance {
+  appearance: none;
+}
+
+
+@mixin font-size_primary {
+  font-size: $primary-font-size;
+}
+
+@mixin font-size_secondary {
+  font-size: $secondary-font-size;
+}
+
+@mixin secondary-text {
+  @include color-tertiary;
+  @include font-size_secondary;
+}
+
+@mixin container-base {
+  @include secondary-background;
+  border-radius: 0.8rem;
+  margin: $unit-01 auto;
+}

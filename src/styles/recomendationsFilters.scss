@@ -1,0 +1,155 @@
+@import './variables-static.scss';
+@import './mixins.scss';
+
+.recomendations-filters {
+    @include container-base;
+    @include padding-005;
+    height: 50px;
+    width: 90%;
+    display: flex;
+    margin: 0 $unit-01;
+
+    &__button-label {
+        @include font-semibold;
+        @include padding-005;
+        @include color-primary;
+        @include center-flex;
+        @include background-transparent0075;
+        @include border-01;
+        @include margin-005;
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+
+    }
+
+        &__button {
+            @include remove-appearance;
+            @include background-transparent;
+            @include border-remove;
+            @include cursor-pointer;
+            @include fill-absolute;
+            @include border-01;
+            &:hover {
+                @include background-transparent001;
+                @include box-shadow01;
+            }
+
+            &:checked{
+                @include background-transparent001;
+            }
+        }
+}
+
+.get-recomendationsButton {
+    @include remove-appearance;
+    @include font-size_primary;
+    @include font-semibold;
+    @include padding-005;
+    @include margin-005;
+    @include cursor-pointer;
+    @include border-remove;
+    @include color-secondary;
+    @include background-green;
+    border-radius: $unit-0125;
+    width: fit-content;
+    height: $unit-025;
+    
+    &:hover {
+        @include color-primary;
+        @include box-shadow01;
+
+    }
+}
+
+.genres-list {
+    @include border-rounded;
+    @include font-size_secondary;
+    @include padding-01;
+    @include color-primary;
+    @include secondary-background;
+    @include border-transparent;
+    position: relative;
+    top: $unit-06;
+    z-index: 4;
+    width: 70%;
+    height: 70%;
+    overflow: scroll;
+    display: inline-flex;
+    flex-wrap: wrap;
+        & h2 {
+            width: 100%;
+        }
+}
+
+.genres-list__background {
+    @include background-transparent005;
+    @include fill-absolute;
+    @include flex-justify-center;
+    z-index: 3;
+    display: none;
+    
+}
+
+.advanced-filters-list {
+    @include border-rounded;
+    @include font-size_secondary;
+    @include padding-01;
+    @include color-primary;
+    @include secondary-background;
+    @include flex-align-center;
+    @include border-transparent;
+    position: relative;
+    flex-direction: column;
+    width: 40%;
+    height: 70%;
+    top: $unit-06;
+    overflow: scroll;
+    z-index: 4;
+}
+
+range-filter {
+    @include background-transparent0075;
+    @include border-rounded;
+    width: 75%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: $unit-0025;
+    padding: $unit-01 $unit-03;
+}
+
+.range-filter__label {
+    @include font-bold;
+    width: $unit-10;
+}
+
+.advanced-filters-list__background{
+    @include background-transparent005;
+    @include fill-absolute;
+    @include flex-justify-center;
+    display: none;
+    z-index: 3;
+}
+
+.range-filter__input {
+    @include cursor-pointer;
+    @include tertiary-background;
+    accent-color: $spotify-white;
+    height: $unit-005; 
+    width: 70%;
+    overflow: hidden;
+
+    &::-webkit-slider-thumb {
+        visibility: hidden;
+    }
+
+    &:hover{
+        accent-color: $spotify-green; 
+        outline: none;
+        overflow: visible;
+        &::-webkit-slider-thumb {
+            visibility:visible;
+        }
+    } 
+}

@@ -1,0 +1,12 @@
+@import './variables-static.scss';
+@import './mixins.scss';
+
+.search-results-list {
+ @include container-base;
+ @include color-primary;
+  display: block;
+  width: 78%;  
+  box-sizing: border-box;
+  min-width: 200px;
+  overflow: hidden;
+}

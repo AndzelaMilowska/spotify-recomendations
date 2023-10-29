@@ -1,0 +1,32 @@
+@import './variables-static.scss';
+@import './mixins.scss';
+
+
+
+body {
+  @include fontFamily-01;
+  @include primary-background;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    overflow: hidden;
+  }
+
+  a {
+    all: unset;
+    width: max-content;
+    &:hover {
+      @include cursor-pointer;
+      text-decoration-line: underline;
+    }
+  }
+  
+.column {
+  margin-top: $unit-01;
+}
+
+.column__right {
+  display: grid;
+  align-content: start;
+}
+
