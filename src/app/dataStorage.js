@@ -9,12 +9,17 @@ export const RECOMENDATIONS_LIST_BACKGROUND_SELECTOR = `.recomendations-list__ba
 export const RECOMENDATIONS_LIST_SELECTOR = `.recomendations-list`
 export const ADD_ELEMENT_CHCECKBOX_SELECTOR = `.addElement-checkbox`
 export const REMOVE_ELEMENT_BUTTON_SELECTOR = `.removeElement-button`
+export const SEARCH_RESULTS_LIST_SELECTOR = `.search-results-list`
+export const SEARCHBAR_INPUT_SELECTOR = `.searchbar__input`
+
+
 
 export const REMOVE_BUTTON_WEB_COMPONENT_TAG_NAME = `removebtn-component`
 
 export const TRACK_URL_ATTRIBUTE = 'trackURL'
 
 export const RECOMENDATIONS_URL_BASE = `https://api.spotify.com/v1/recommendations?`
+export const AUTHORIZATION_TOKEN_URL = 'https://accounts.spotify.com/api/token'
 export const RECOMENDATIONS_HEADER_LAYOUT = `<h2>Recommendations list:</h2> <button class="recomendations-list__button" id="createPlaylist_button">Create playlist</button>`
 export const GENRES_SECTION_HEADER_LAYOUT = `<h2>Available genres:</h2>`
 export function genreFilterInputLayout(genreName) {
@@ -24,18 +29,18 @@ export function genreFilterInputLayout(genreName) {
     </label>`
 }
 
-export function searchResultLayout(object) {
+export function searchResultLayout(object, componentName) {
     return ` 
-<search-result class="search-result" 
-buttonComponentName = "checkbox-component"
-coverImage="${object.coverImage}"
-trackName="${object.trackName}" 
-trackURL="${object.trackURL}"
-artistName="${object.artists[0].name}"
-artistURL="${object.artists[0].url}"
-albumName="${object.albumName}"
-albumURL="${object.albumURL}"
-trackTime="${object.duration}"
-></search-result>`}
+    <search-result class="search-result" 
+    buttonComponentName = ${componentName}
+    coverImage="${object.coverImage}"
+    trackName="${object.trackName}" 
+    trackURL="${object.trackURL}"
+    artistName="${object.artists[0].name}"
+    artistURL="${object.artists[0].url}"
+    albumName="${object.albumName}"
+    albumURL="${object.albumURL}"
+    trackTime="${object.duration}"
+    ></search-result>`}
 
 export const SEARCH_RESULT_TRACKS_AMOUNT = 10;

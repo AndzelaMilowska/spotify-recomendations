@@ -34,9 +34,6 @@ export class UserAuthorizationRequest {
             let args = await UserAuthorizationRequest.getRequestArguments();
             window.location = 'https://accounts.spotify.com/authorize?' + args;
         }
-        else {
-            console.log('reloaded')
-        }
     }
 
     static restartPage() {

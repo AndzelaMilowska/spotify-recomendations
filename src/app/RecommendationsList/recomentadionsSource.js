@@ -1,3 +1,4 @@
+import { searchResultLayout } from "../dataStorage"
 export class RecommendationSourceListGenerator {
     static recomendationSource = []
     static generateListHTML(sourceListArr, componentName) {
@@ -6,18 +7,7 @@ export class RecommendationSourceListGenerator {
             return ''
         }
         sourceListArr.forEach(element => {
-            recomendationsSourceList += ` 
-            <search-result class="search-result" 
-            buttonComponentName = ${componentName}
-            coverImage="${element.coverImage}"
-            trackName="${element.trackName}" 
-            trackURL="${element.trackURL}"
-            artistName="${element.artists[0].name}"
-            artistURL="${element.artists[0].url}"
-            albumName="${element.albumName}"
-            albumURL="${element.albumURL}"
-            trackTime="${element.duration}"
-            ></search-result>`
+            recomendationsSourceList +=  searchResultLayout(element, componentName)
         })
             return recomendationsSourceList
         

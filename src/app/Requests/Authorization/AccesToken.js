@@ -1,9 +1,10 @@
 import { AuthorizationCode } from "./authorizationCode";
 import { UserAuthorizationRequest } from "./requestUserAuth";
+import { AUTHORIZATION_TOKEN_URL } from "../../dataStorage";
 
 export class AccesToken {
     static async accesTokenRequest(body) {
-        const response = await fetch('https://accounts.spotify.com/api/token', {
+        const response = await fetch(AUTHORIZATION_TOKEN_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'

@@ -38,7 +38,7 @@ export class GenerateSearchResultsList {
             return "no results"
         }
         newResultsObj.slice(0, SEARCH_RESULT_TRACKS_AMOUNT).forEach(element => {
-            listHTML += searchResultLayout(element)
+            listHTML += searchResultLayout(element, "checkbox-component")
         });
         return listHTML
     }
