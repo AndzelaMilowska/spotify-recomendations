@@ -1,7 +1,7 @@
 import { RecomendationsURLGenerator } from "./getRecmdURLgenerator";
 export class RecomendationsRequest {
   static getRecomendationsRequest() {
-    let requestURL = RecomendationsURLGenerator.recUrlGenerator()
+    let requestURL = RecomendationsURLGenerator.recomendationsUrlGenerator()
     const data = JSON.parse(localStorage.getItem('acces_data'));
     return fetch(requestURL, {
       method: "GET",

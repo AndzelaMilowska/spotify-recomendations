@@ -1,9 +1,14 @@
 import { TimeConverter } from "../../timeConverter"
-import { GenerateRecomendationsSourceList } from "../../RecommendationsList/recomentadionsSource"
+import { RecommendationSourceListGenerator } from "../../RecommendationsList/recomentadionsSource"
+import { SEARCH_RESULT_TRACKS_AMOUNT } from "../../dataStorage"
+import { searchResultLayout } from "../../dataStorage"
+import { ADD_ELEMENT_CHCECKBOX_SELECTOR } from "../../dataStorage"
 export class GenerateSearchResultsList {
     static generateListObj(searchResponse) {
         let searchResult = searchResponse
-        if (searchResult) {
+        if (!searchResult) {
+            return "no results"
+        }
             let searchResultsObj = searchResult.tracks.items.map((track) => {
                 return {
                     coverImage: track.album.images[0].url,
@@ -23,42 +28,25 @@ export class GenerateSearchResultsList {
                 }
             })
             return searchResultsObj
-        }
-        else {
-            return "no results"
-        }
 
     }
 
     static generateListHTML(resultObj) {
         let newResultsObj = resultObj;
         let listHTML = ""
-        if (typeof newResultsObj === 'object') {
-            for (let j = 0; j < 10; j++) {
-                listHTML += ` 
-                <search-result class="search-result" 
-                buttonComponentName = "checkbox-component"
-                coverImage="${newResultsObj[j].coverImage}"
-                trackName="${newResultsObj[j].trackName}" 
-                trackURL="${newResultsObj[j].trackURL}"
-                artistName="${newResultsObj[j].artists[0].name}"
-                artistURL="${newResultsObj[j].artists[0].url}"
-                albumName="${newResultsObj[j].albumName}"
-                albumURL="${newResultsObj[j].albumURL}"
-                trackTime="${newResultsObj[j].duration}"
-                ></search-result>`
-            }
-            return listHTML
-        }
-        else {
+        if (typeof newResultsObj !== 'object') {
             return "no results"
         }
+        newResultsObj.slice(0, SEARCH_RESULT_TRACKS_AMOUNT).forEach(element => {
+            listHTML += searchResultLayout(element)
+        });
+        return listHTML
     }
     
     static setCheckboxesState(searchResultsObject) {
-        let checkboxBtn = document.querySelectorAll(".addElement-checkbox")
+        let checkboxBtn = document.querySelectorAll(ADD_ELEMENT_CHCECKBOX_SELECTOR)
         for (let i = 0; i < checkboxBtn.length; i++) {
-            if (GenerateRecomendationsSourceList.recomendationSource.some(e => e.ID === searchResultsObject[i].ID)) {
+            if (RecommendationSourceListGenerator.recomendationSource.some(e => e.ID === searchResultsObject[i].ID)) {
                 checkboxBtn[i].checked = true
             }
         }

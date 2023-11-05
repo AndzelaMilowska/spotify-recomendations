@@ -2,12 +2,13 @@
 @import './mixins.scss';
 
 .searchbar__icon {
-    @include color-tertiary;
-    @include padding-005;
     @include flex-justify-center;
     width: $unit-01;
     flex-direction: column;
+    padding: $padding-02;
+    color: $color-tertiary;
+
     &:hover {
-        @include color-primary;
+        color: $color-primary;
     }
 }

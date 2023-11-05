@@ -4,37 +4,38 @@
 .recomendations-list__background {
     @include fill-absolute;
     @include flex-justify-center;
-    @include background-transparent005;
+    background-color: $transparent005-background;
     z-index: 3;
     display: none;
 }
 
 .recomendations-list__button {
-    @include remove-appearance;
-    @include font-size_primary;
-    @include cursor-pointer;
-    @include border-01;
-    @include color-secondary;
-    @include padding-005;
-    @include border-remove;
-    @include background-green;
-    @include top-02;
+    appearance: none;
+    background-color: $green-background;
+    top: $top-distance;
+    border: none;
     position: absolute;
+    color: $color-secondary;
+    cursor: pointer;
     right: $unit-02;
+    font-size: $primary-font-size;
+    border-radius: $border-rounded-02;
+    padding: $padding-02;
+
     &:hover {
-        @include color-primary;
+        color: $color-primary;
     }
 }
 
 .recomendations-list {
-    @include font-size_secondary;
-    @include border-rounded;
-    @include color-primary;
-    @include secondary-background;
-    @include border-transparent;
-    @include padding-01;
-    @include top-02;
+    background-color: $secondary-background;
+    top: $top-distance;
+    font-size: $secondary-font-size;
     position: relative;
+    padding: $padding-01;
+    border-radius: $border-rounded-01;
+    border: $border-transparent-01;
+    color: $color-primary;
     width: 40%;
     height: 90%;
     overflow: scroll;
@@ -44,10 +45,12 @@
     & .search-result {
         grid-template-columns: 1fr minmax(100px, 5fr) minmax(10px, 2fr) 1fr;
     }
-        & p {
-            display:none;
-        }
-        & removebtn-component {
-            display:none;
-        }
+
+    & p {
+        display: none;
+    }
+
+    & removebtn-component {
+        display: none;
+    }
 }

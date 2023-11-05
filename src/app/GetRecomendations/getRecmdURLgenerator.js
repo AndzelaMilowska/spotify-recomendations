@@ -1,4 +1,5 @@
-import { GenerateRecomendationsSourceList } from "../RecommendationsList/recomentadionsSource"
+import { RecommendationSourceListGenerator } from "../RecommendationsList/recomentadionsSource"
+import { RECOMENDATIONS_URL_BASE } from "../dataStorage"
 export class RecomendationsURLGenerator {
     static recomendationsFiltersObj = {
         seedGenres: [],
@@ -10,20 +11,19 @@ export class RecomendationsURLGenerator {
     static recomendationsSourceConverter() {
         let recomendationsSourceIDs = {
             artistsIDs:
-                GenerateRecomendationsSourceList.recomendationSource.map(element => {
-                    return element.artists.map(artist => artist.id)
+            RecommendationSourceListGenerator.recomendationSource.map(element => {
+                    element.artists.map(artist => artist.id)
                 }).toString()
             ,
             tracksIDs:
-                GenerateRecomendationsSourceList.recomendationSource.map(element => element.ID).toString()
+            RecommendationSourceListGenerator.recomendationSource.map(element => element.ID).toString()
         }
         return recomendationsSourceIDs
     }
 
-    static recUrlGenerator() {
+    static recomendationsUrlGenerator() {
         let sourcesIDs = RecomendationsURLGenerator.recomendationsSourceConverter()
-        let URLbase = `https://api.spotify.com/v1/recommendations?`
-        let urlGenerator = URLbase
+        let urlGenerator = RECOMENDATIONS_URL_BASE
 
         if (this.recomendationsFiltersObj.seedGenres.length > 0) {
             urlGenerator += '&seed_genres=' + `${encodeURIComponent(this.recomendationsFiltersObj.seedGenres.toString())}`
@@ -33,7 +33,7 @@ export class RecomendationsURLGenerator {
             urlGenerator += '&seed_artists=' + encodeURIComponent(sourcesIDs.artistsIDs)
         }
 
-        if (URLbase === urlGenerator || this.recomendationsFiltersObj.seedTracks === true) {
+        if (RECOMENDATIONS_URL_BASE === urlGenerator || this.recomendationsFiltersObj.seedTracks === true) {
             urlGenerator += '&seed_tracks=' + encodeURIComponent(sourcesIDs.tracksIDs)
         }
 

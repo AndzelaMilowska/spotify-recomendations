@@ -1,4 +1,4 @@
-export class CurrentUserRequest {
+export class UserDataHttpService {
   static UserData
   static async getCurrendUserData() {
     const data = JSON.parse(localStorage.getItem('acces_data'));

@@ -1,5 +1,5 @@
 import { UserAuthorizationRequest } from "./Authorization/requestUserAuth";
-export class GetGenres {
+export class GenreHttpService {
   static getGenresRequest() {
     const data = JSON.parse(localStorage.getItem('acces_data'));
     let availableGenreURL = `https://api.spotify.com/v1/recommendations/available-genre-seeds`;

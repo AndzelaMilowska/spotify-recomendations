@@ -10,7 +10,7 @@
     max-width: 100%;
 
     &:hover {
-        @include background-transparent001;
+        background-color: $transparent001-background;
     }
 
     &__cover-image {
@@ -27,12 +27,12 @@
     }
 
     &__track-name {
-        @include font-size_primary
+        font-family: $font-family-01;
     }
 
     &__artist-name {
         @include secondary-text;
-        @include color-tertiary;
+        color: $color-tertiary;
         padding-top: 0.3rem;
         box-sizing: border-box;
     }
@@ -47,7 +47,7 @@
         box-sizing: border-box;
 
         &:hover {
-            @include color-primary;
+            color: $color-primary;
         }
     }
 

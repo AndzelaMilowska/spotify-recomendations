@@ -3,57 +3,57 @@
 
 checkbox-component {
     @include square-16px;
-    @include margin-01;
+    margin: $margin-01;
 }
 
 .addElement-checkbox__label {
-    @include color-tertiary;
     @include square-16px;
-    @include border-circle;
     position: relative;
+    color: $color-tertiary;
+    border-radius: $border-rounded-circle;
+
     &:hover {
-        @include color-primary;
+        color: $color-primary;
     }
 }
 
 .addElement-checkbox {
     @include center-absolute;
-    @include border-circle;
-    @include margin-00;
-    @include padding-00;
-    @include cursor-pointer;
     @include square-15px;
     appearance: none;
+    border-radius: $border-rounded-circle;
+    cursor: pointer;
+    margin: $margin-00;
+    padding: $padding-00;
     z-index: 2;
 
     &__icon {
         @include center-absolute;
         @include square-16px;
-        @include padding-00;
-        color:inherit;
+        color: inherit;
+        padding: $padding-00;
         z-index: 0;
     }
 
     &__removeIcon {
-        @include duration-01;
+        transition-duration: $duration-time-01;
         transform: rotate(90deg);
     }
 }
 
-.addElement-checkbox:checked + .addElement-checkbox__addIcon{
-    @include duration-01;
-    @include color-transparent;
+.addElement-checkbox:checked+.addElement-checkbox__addIcon {
+    transition-duration: $duration-time-01;
     transform: rotate(90deg);
+    color: $transparent;
 }
 
-.addElement-checkbox:not(:checked) + .addElement-checkbox__addIcon {
-    @include duration-01;
+.addElement-checkbox:not(:checked)+.addElement-checkbox__addIcon {
+    transition-duration: $duration-time-01;
     color: inherit;
     transform: rotate(0deg);
 }
 
-.addElement-checkbox:checked ~ .addElement-checkbox__removeIcon{
-    @include duration-01;
+.addElement-checkbox:checked~.addElement-checkbox__removeIcon {
+    transition-duration: $duration-time-01;
     transform: rotate(180deg);
 }
-

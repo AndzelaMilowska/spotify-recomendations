@@ -1,12 +1,12 @@
 import { Throttle } from "../../throttle";
-import { SearchRequest } from "./searchRequest";
+import { SearchHttpService } from "./searchRequest";
 import { GenerateSearchResultsList } from "./generateSearchResultsList";
 import { AddElementCheckbox } from "../../RecommendationsList/lookForAddElChboxUse";
 export class SearchbarInputValue {
     static async reactOnSearchbarUse() {
         const searchResultsList = document.querySelector(".search-results-list")
         searchResultsList.innerHTML = ''
-        let searchRequest = await SearchRequest.runSearchRequest()
+        let searchRequest = await SearchHttpService.runSearchRequest()
         let searchResObj = GenerateSearchResultsList.generateListObj(searchRequest)
         searchResultsList.innerHTML = GenerateSearchResultsList.generateListHTML(searchResObj)
         GenerateSearchResultsList.setCheckboxesState(searchResObj)

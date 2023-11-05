@@ -5,18 +5,20 @@ export class RecomendationListBuilder {
     static recomendationsObject
     static async generateRecomendationsObj() {
         let response = await RecomendationsRequest.getRecomendationsRequest()
-        
-        if (response) {
+        if (!response) {
+            return
+        }
             let recomendationsObj = response.tracks.map((track) => {
+                //next time i'll create a separate functon that will prepare the recomendationsObject data contract
                 return {
-                    coverImage: track.album.images[0].url,
-                    trackName: track.name,
-                    trackURL: track.external_urls.spotify,
-                    artists: track.artists.map((artist) => {
+                    coverImage: track?.album?.images[0]?.url,
+                    trackName: track?.name,
+                    trackURL: track?.external_urls.spotify,
+                    artists: track?.artists.map((artist) => {
                         return {
-                            name: artist.name,
-                            id: artist.id,
-                            url: artist.external_urls.spotify
+                            name: artist?.name,
+                            id: artist?.id,
+                            url: artist?.external_urls?.spotify
                         }
                     }),
                     albumName: track.album.name,
@@ -28,7 +30,5 @@ export class RecomendationListBuilder {
             }
             )
             this.recomendationsObject = recomendationsObj
-            return recomendationsObj
-        }
     }
 }

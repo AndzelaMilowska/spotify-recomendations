@@ -1,19 +1,23 @@
 import { RecomendationListBuilder } from "./generateRecomendationsList";
-import { GenerateRecomendationsSourceList } from "../RecommendationsList/recomentadionsSource";
+import { RecommendationSourceListGenerator } from "../RecommendationsList/recomentadionsSource";
 import { PlaylistCreator } from "../Requests/PlaylistCreation/createPlaylistrunner";
+import { RECOMENDATIONS_HEADER_LAYOUT } from "../dataStorage";
+import { RECOMENDATIONS_LIST_BACKGROUND_SELECTOR } from "../dataStorage";
+import { RECOMENDATIONS_LIST_SELECTOR } from "../dataStorage";
 export class RecomendationsListRenderer {
-    static recomendationsDest = document.querySelector(".recomendations-list")
-    static recomendationsBg = document.querySelector(".recomendations-list__background")
+    static recomendationsDest = document.querySelector(RECOMENDATIONS_LIST_SELECTOR)
+    static recomendationsBg = document.querySelector(RECOMENDATIONS_LIST_BACKGROUND_SELECTOR)
     static async renderRecomendationsList() {
-        let recommendationsObj = await RecomendationListBuilder.generateRecomendationsObj()
+        await RecomendationListBuilder.generateRecomendationsObj()
+        let recommendationsObj = RecomendationListBuilder.recomendationsObject
         if (recommendationsObj == undefined) {
-            this.recomendationsDest.innerHTML = ''
+            RecomendationsListRenderer.recomendationsDest.innerHTML = ''
         }
         else {
-            this.recomendationsBg.style.display = `flex`
-            let recomendationsHeader = `<h2>Recommendations list:</h2> <button class="recomendations-list__button" id="createPlaylist_button">Create playlist</button>`
-            let recomendationsListHTML = GenerateRecomendationsSourceList.generateListHTML(recommendationsObj, `p`)
-            this.recomendationsDest.innerHTML = recomendationsHeader + recomendationsListHTML
+            RecomendationsListRenderer.recomendationsBg.style.display = `flex`
+            let recomendationsHeader = RECOMENDATIONS_HEADER_LAYOUT
+            let recomendationsListHTML = RecommendationSourceListGenerator.generateListHTML(recommendationsObj, `p`)
+            RecomendationsListRenderer.recomendationsDest.innerHTML = recomendationsHeader + recomendationsListHTML
             PlaylistCreator.createPlaylistBtnOn()
         }
     }
@@ -21,8 +25,8 @@ export class RecomendationsListRenderer {
     static lookforQuit() {
         document.addEventListener("click", (evt) => {
             let clidkedEl = evt.target;
-            if (clidkedEl == this.recomendationsBg) {
-                this.recomendationsBg.style.display = `none`
+            if (clidkedEl == RecomendationsListRenderer.recomendationsBg) {
+                RecomendationsListRenderer.recomendationsBg.style.display = `none`
             }
         });
     }

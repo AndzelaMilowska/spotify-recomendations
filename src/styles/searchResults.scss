@@ -2,10 +2,10 @@
 @import './mixins.scss';
 
 .search-results-list {
- @include container-base;
- @include color-primary;
+  @include container-base;
   display: block;
-  width: 78%;  
+  color: $color-primary;
+  width: $container-width-01;
   box-sizing: border-box;
   min-width: 200px;
   overflow: hidden;

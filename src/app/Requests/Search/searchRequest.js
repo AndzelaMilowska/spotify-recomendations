@@ -1,6 +1,6 @@
 import { SearchURL } from "./generateSearchURL";
 
-export class SearchRequest {
+export class SearchHttpService{
   static runSearchRequest() {
     const data = JSON.parse(localStorage.getItem('acces_data'));
     let searchURL = SearchURL.generateSearchURL();

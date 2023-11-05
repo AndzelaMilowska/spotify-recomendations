@@ -9,7 +9,7 @@ import { SearchResult } from './app/WebComponents/webComponentSearchResult'
 import { FilterRange } from './app/WebComponents/webComponentFilterRange'
 import { AccesToken } from './app/Requests/Authorization/AccesToken' 
 import { SearchbarInputValue } from './app/Requests/Search/lookForSearchFieldUse'
-import { GetRecomendationsBtn } from './app/GetRecomendations/getRecomendationsBtn'
+import { GetRecomendationsButton } from './app/GetRecomendations/getRecomendationsButton'
 import { GenresFilter } from './app/Filters/genresFiltersGenerator'
 import { ModalListener } from './app/modalUseListener'
 import { FiltersListener } from './app/Filters/filtersListener'
@@ -26,10 +26,8 @@ CustomHTMLElementBuilder.createCustomElement(FilterRange.elementTagName, FilterR
 await  AccesToken.getAccesToken()
 await SearchbarInputValue.lookForSearchbarUse()
 GenresFilter.generateHTML()
-GetRecomendationsBtn.getRecomendations()
+GetRecomendationsButton.getRecomendations()
 ModalListener.lookForUse('.genres-list__background', '.genres-filter')
 ModalListener.lookForUse('.advanced-filters-list__background', '.advanced-filter')
 FiltersListener.filtersListenersActivator()
-
-
 

@@ -1,4 +1,4 @@
-import { CurrentUserRequest } from "../getCurrentUser"
+import { UserDataHttpService } from "../getCurrentUser"
 import { CreatePlaylistRequests } from "./createPlaylistRequest"
 import { PlaylistPopup } from "./playlistCreatedPopUp"
 
@@ -6,7 +6,7 @@ export class PlaylistCreator {
     static async createPlaylistBtnOn() {
         const createPlaylistBtn = document.querySelector('#createPlaylist_button')
         createPlaylistBtn.addEventListener('click', async () => {
-            await CurrentUserRequest.getCurrendUserData()
+            await UserDataHttpService.getCurrendUserData()
             await CreatePlaylistRequests.createPlaylistRequest()
             CreatePlaylistRequests.generateTracksUriArr()
             await CreatePlaylistRequests.addItemsToPlaylist(CreatePlaylistRequests.newPlaylistData.id, CreatePlaylistRequests.recomendationsUrisData)

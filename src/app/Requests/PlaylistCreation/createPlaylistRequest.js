@@ -1,4 +1,4 @@
-import { CurrentUserRequest } from "../getCurrentUser";
+import { UserDataHttpService } from "../getCurrentUser";
 import { RecomendationListBuilder } from "../../GetRecomendations/generateRecomendationsList";
 
 export class CreatePlaylistRequests {
@@ -7,7 +7,7 @@ export class CreatePlaylistRequests {
 
     static async createPlaylistRequest() {
         const data = JSON.parse(localStorage.getItem('acces_data'));
-        const userID = await CurrentUserRequest.UserData.id
+        const userID = await UserDataHttpService.UserData.id
         const response = await fetch(`https://api.spotify.com/v1/users/${userID}/playlists`, {
             method: "POST",
             headers: {
