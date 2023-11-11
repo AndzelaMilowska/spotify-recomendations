@@ -12,8 +12,8 @@ export class AccesToken {
             body: body.toString()
         })
         let data = await response.json()
-        localStorage.setItem('access_token', await data.access_token);
-        localStorage.setItem('acces_data', JSON.stringify(await data))
+        localStorage.setItem('access_token', data.access_token);
+        localStorage.setItem('acces_data', JSON.stringify(data))
     }
 
     static async getAccesToken() {
