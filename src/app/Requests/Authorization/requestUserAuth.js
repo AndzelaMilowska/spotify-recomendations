@@ -37,9 +37,11 @@ export class UserAuthorizationRequest {
     }
 
     static restartPage() {
-        console.log('error here')
+        console.log('error here RESTARTING')
+        
         localStorage.clear()
-        location.replace('http://localhost:3000/')
+        window.location = 'http://localhost:3000/'
+        // location.replace('http://localhost:3000/')
     }
 }
 

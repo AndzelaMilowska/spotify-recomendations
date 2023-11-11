@@ -10,8 +10,7 @@ export class GenreHttpService {
 
       .then(response => {
         if (!response.ok) {
-          // UserAuthorizationRequest.restartPage()
-          console.log('please clear local storage and refresh page')
+          setTimeout(UserAuthorizationRequest.restartPage, 5000)
           throw new Error('HTTP status ' + response.status);
         }
         return response.json();
