@@ -1,0 +1,65 @@
+.search-result {
+    padding: $unit-0025 $unit-005;
+    margin: $unit-0075 0;
+    display: grid;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: $unit-0025;
+    grid-template-columns: 50px 1fr minmax(100px, 5fr) minmax(10px, 2fr) 1fr;
+    align-items: center;
+    max-width: 100%;
+
+    &:hover {
+        background-color: $transparent001-background;
+    }
+
+    &__cover-image {
+        margin-right: $unit-005;
+    }
+
+    &__track-core-data {
+        margin: 0 $unit-005;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    &__track-name {
+        font-family: $font-family-01;
+    }
+
+    &__artist-name {
+        @include secondary-text;
+        color: $color-tertiary;
+        padding-top: 0.3rem;
+        box-sizing: border-box;
+    }
+
+    &__album-name {
+        @include secondary-text;
+        padding: 0 $unit-005;
+        display: flex;
+        max-width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        box-sizing: border-box;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+    &__track-time {
+        @include secondary-text;
+        padding: 0 $unit-01;
+        cursor: default;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+.removeTransformation {
+    display: none;
+}

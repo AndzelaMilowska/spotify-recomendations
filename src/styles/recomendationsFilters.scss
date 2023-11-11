@@ -1,0 +1,155 @@
+@import './variables-static.scss';
+@import './mixins.scss';
+
+.recomendations-filters {
+    @include container-base;
+    height: 50px;
+    width: 90%;
+    display: flex;
+    margin: 0 $unit-01;
+    padding: $padding-02;
+
+    &__button-label {
+        @include center-flex;
+        background-color: $transparent0075-background;
+        padding: $padding-02;
+        color: $color-primary;
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+        margin: $margin-02;
+        border-radius: $border-rounded-02;
+        font-weight: $font-weight_semibold;
+    }
+
+    &__button {
+        @include fill-absolute;
+        appearance: none;
+        border: none;
+        background-color: $transparent00-background;
+        border-radius: $border-rounded-02;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $transparent001-background;
+            box-shadow: $shadow-01;
+        }
+
+        &:checked {
+            background-color: $transparent001-background;
+        }
+    }
+}
+
+.get-recomendationsButton {
+    appearance: none;
+    border: none;
+    margin: $margin-02;
+    padding: $padding-02;
+    cursor: pointer;
+    background-color: $green-background;
+    border-radius: $unit-0125;
+    font-size: $primary-font-size;
+    font-weight: $font-weight_semibold;
+    color: $color-secondary;
+    width: fit-content;
+    height: $unit-025;
+
+    &:hover {
+        box-shadow: $shadow-01;
+        color: $color-primary;
+    }
+}
+
+.genres-list {
+    background-color: $secondary-background;
+    position: relative;
+    border-radius: $border-rounded-01;
+    top: $unit-06;
+    padding: $padding-01;
+    z-index: 4;
+    font-size: $secondary-font-size;
+    width: 70%;
+    height: 70%;
+    border: $border-transparent-01;
+    color: $color-primary;
+    overflow: scroll;
+    display: inline-flex;
+    flex-wrap: wrap;
+
+    & h2 {
+        width: 100%;
+    }
+}
+
+.genres-list__background {
+    @include fill-absolute;
+    @include flex-justify-center;
+    background-color: $transparent005-background;
+    z-index: 3;
+    display: none;
+}
+
+.advanced-filters-list {
+    @include flex-align-center;
+    border-radius: $border-rounded-01;
+    position: relative;
+    background-color: $secondary-background;
+    flex-direction: column;
+    color: $color-primary;
+    padding: $padding-01;
+    width: 40%;
+    height: 70%;
+    top: $unit-06;
+    font-size: $secondary-font-size;
+    border: $border-transparent-01;
+    overflow: scroll;
+    z-index: 4;
+}
+
+range-filter {
+    background-color: $transparent0075-background;
+    width: 75%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: $unit-0025;
+    padding: $unit-01 $unit-03;
+    border-radius: $border-rounded-01;
+}
+
+.range-filter__label {
+    width: $unit-10;
+    font-weight: $font-weight_bold;
+}
+
+.advanced-filters-list__background {
+    @include fill-absolute;
+    @include flex-justify-center;
+    background-color: $transparent005-background;
+    display: none;
+    z-index: 3;
+}
+
+.range-filter__input {
+    background-color: $tertiary-background;
+    cursor: pointer;
+    accent-color: $spotify-white;
+    height: $unit-005;
+    width: 70%;
+    overflow: hidden;
+
+    &::-webkit-slider-thumb {
+        visibility: hidden;
+    }
+
+    &:hover {
+        accent-color: $spotify-green;
+        outline: none;
+        overflow: visible;
+
+        &::-webkit-slider-thumb {
+            visibility: visible;
+        }
+    }
+}

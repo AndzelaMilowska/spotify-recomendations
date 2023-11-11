@@ -1,0 +1,14 @@
+@import './variables-static.scss';
+@import './mixins.scss';
+
+.searchbar__icon {
+    @include flex-justify-center;
+    width: $unit-01;
+    flex-direction: column;
+    padding: $padding-02;
+    color: $color-tertiary;
+
+    &:hover {
+        color: $color-primary;
+    }
+}

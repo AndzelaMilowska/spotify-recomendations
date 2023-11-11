@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700&display=swap" rel="stylesheet">
+  <title>
+    Spotify-Widget
+  </title>
+  <link rel="icon" href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png" alt='spotify'>
+<link href="main.css" rel="stylesheet"></head>
+
+<body>
+  <div class="column column__left">
+    <form class=searchbar>
+      <svg-icon name='searchIcon' class="searchbar__icon"></svg-icon>
+      <input id="searchbar__input" class="searchbar__input" type="text" placeholder="Search..">
+    </form>
+    <div class="search-results-list">
+    </div>
+  </div>
+  </div>
+
+  <div class="column column__right">
+    <div class="recomendations-filters">
+      <label for="tracks-filter" class="recomendations-filters__button-label" >
+        <input name="seedTracks" id="tracks-filter" type="checkbox" class="recomendations-filters__button boolean_filter"/>Tracks
+      </label>
+      <label for="artists-filter" class="recomendations-filters__button-label" >
+        <input name="seedArtists" id="artists-filter" type="checkbox" class="recomendations-filters__button boolean_filter"/>Artists
+      </label>
+      <label for="genres-filter" class="recomendations-filters__button-label" >
+      <button id="genres-filter" class="recomendations-filters__button genres-filter"></button>Genres
+    </label>
+    <label for="advanced-filter" class="recomendations-filters__button-label" >
+      <button id="advanced-filter" class="recomendations-filters__button genres-filter advanced-filter"></button>Advanced
+    </label>
+    <label for="remove-filter" class="recomendations-filters__button-label" >
+      <button id="remove-filter" class="recomendations-filters__button genres-filter"></button>Remove Filters
+    </label>
+      <button class="get-recomendationsButton">Get Recomendations</button>
+    </div>
+    <div class="recomendations-sourcesList">
+    </div>
+  </div>
+
+  <div class = "recomendations-list__background">
+    <div class="recomendations-list">
+      
+    </div>
+  </div>
+<div class = "genres-list__background">
+  <div class = "genres-list">
+
+  </div>
+</div>
+<div class = "advanced-filters-list__background">
+  <div class = "advanced-filters-list">
+    <range-filter name = "Limit" min ="1" max = "100"></range-filter>
+    <range-filter name = "Min acousticness" min ="0" max = "1" step="0.01"></range-filter> 
+    <range-filter name = "Max acousticness" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Target acousticness" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Min danceability" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Max danceability" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Target danceability" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Min energy" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Max energy" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Target energy" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Min instrumentalness" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Max instrumentalness" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Target instrumentalness" min ="0" max = "1" step="0.01"></range-filter> 
+    <range-filter name = "Min key" min ="0" max = "11" step="1"></range-filter>
+    <range-filter name = "Max key" min ="0" max = "11" step="1"></range-filter>
+    <range-filter name = "Target key" min ="0" max = "11" step="1"></range-filter> 
+    <range-filter name = "Min liveness" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Max liveness" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Target liveness" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Min liveness" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Max liveness" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Target liveness" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Min mode" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Max mode" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Target mode" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Min popularity" min ="1" max = "100"></range-filter>
+    <range-filter name = "Max popularity" min ="1" max = "100"></range-filter>
+    <range-filter name = "Target popularity" min ="1" max = "100"></range-filter>
+    <range-filter name = "Min speechiness" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Max speechiness" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Target speechiness" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Min tempo" min ="0" max = "250" step="10"></range-filter>
+    <range-filter name = "Max tempo" min ="0" max = "250" step="10" ></range-filter>
+    <range-filter name = "Target tempo" min ="0" max = "250"></range-filter>
+    <range-filter name = "Min valence" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Max valence" min ="0" max = "1" step="0.01"></range-filter>
+    <range-filter name = "Target valence" min ="0" max = "1" step="0.01"></range-filter>
+
+
+    <button class="get-recomendationsButton">Apply</button>
+  </div>
+</div>
+
+<div class="newPlaylist-info">
+  <svg-icon name='doneIcon' class="newPlaylist-info__Icon"></svg-icon>
+  <button class="recomendations-list__button goToPlaylist__button">Go to playlist</button>
+</div>
+<script defer src="main.js"></script></body>
+
+</html>
