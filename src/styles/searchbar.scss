@@ -1,0 +1,43 @@
+@import './variables-static.scss';
+@import './mixins.scss';
+
+.searchbar {
+    background-color: $secondary-background;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: $unit-02;
+    width: 80%;
+    height: $unit-03;
+    font-size: $secondary-font-size;
+    margin: auto;
+    transition: color 0.25s;
+    border: $border-transparent-01;
+
+    &__input {
+        background-color: $transparent00-background;
+        font-family: inherit;
+        text-overflow: ellipsis;
+        color: $color-primary;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &:hover {
+        border-color: $secondary-grey;
+        border: $border-transparent-01;
+    }
+
+    &:has(&__input:focus) {
+        border-color: $spotify-white;
+        border: $border-transparent-01;
+
+        &>.searchbar__icon {
+            color: $color-primary;
+        }
+    }
+
+
+}

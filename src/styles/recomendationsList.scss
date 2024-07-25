@@ -1,0 +1,56 @@
+@import './variables-static.scss';
+@import './mixins.scss';
+
+.recomendations-list__background {
+    @include fill-absolute;
+    @include flex-justify-center;
+    background-color: $transparent005-background;
+    z-index: 3;
+    display: none;
+}
+
+.recomendations-list__button {
+    appearance: none;
+    background-color: $green-background;
+    top: $top-distance;
+    border: none;
+    position: absolute;
+    color: $color-secondary;
+    cursor: pointer;
+    right: $unit-02;
+    font-size: $primary-font-size;
+    border-radius: $border-rounded-02;
+    padding: $padding-02;
+
+    &:hover {
+        color: $color-primary;
+    }
+}
+
+.recomendations-list {
+    background-color: $secondary-background;
+    top: $top-distance;
+    font-size: $secondary-font-size;
+    position: relative;
+    padding: $padding-01;
+    border-radius: $border-rounded-01;
+    border: $border-transparent-01;
+    color: $color-primary;
+    width: 40%;
+    height: 90%;
+    overflow: scroll;
+    z-index: 4;
+
+
+    & .search-result {
+        grid-template-columns: 1fr minmax(100px, 5fr) minmax(10px, 2fr) 1fr;
+    }
+
+    & p {
+        display: none;
+    }
+
+    & removebtn-component {
+        display: none;
+    }
+}

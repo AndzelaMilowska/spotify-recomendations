@@ -1,0 +1,52 @@
+@import './variables-static.scss';
+
+@mixin square-16px {
+  width: 16px;
+  height: 16px;
+}
+
+@mixin square-15px {
+  width: 15px;
+  height: 15px;
+}
+
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin center-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin fill-absolute {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin secondary-text {
+  color: $color-tertiary;
+  font-size: $secondary-font-size;
+}
+
+@mixin container-base {
+  background-color: $secondary-background;
+  border-radius: 0.8rem;
+  margin: $unit-01 auto;
+}
